@@ -1,6 +1,13 @@
 {
   "name": "openeyes/module-installer",
+  "description": "Instlaler plugin for OpenEyes modules",
   "type": "composer-plugin",
+  "extra": {
+    "class": "OpenEyes\\Composer\\OpenEyesInstallerPlugin"
+  },
+  "autoload": {
+    "psr-0": { "OpenEyes\\Composer\\": "src/" }
+  },
   "require": {
     "composer-plugin-api": "1.0.0"
   }

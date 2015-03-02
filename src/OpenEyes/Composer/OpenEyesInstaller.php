@@ -19,7 +19,7 @@ class OpenEyesInstaller extends LibraryInstaller
 	 */
 	public function getPackageBasePath(PackageInterface $package)
 	{
-		$prefix = substr($package->getPrettyName(), 0, 23);
+		$prefix = substr($package->getPrettyName(), 0, 9);
 		if ('openeyes/' !== $prefix) {
 			throw new \InvalidArgumentException(
 				'Unable to install template, openeyes modules '
@@ -28,7 +28,7 @@ class OpenEyesInstaller extends LibraryInstaller
 			);
 		}
 
-		return 'protected/modules/' . str_replace(' ', '', ucwords(str_replace('_', ' ', $package->getPrettyName())));
+		return 'protected/modules/' . str_replace(' ', '', ucwords(str_replace([$prefix, '-'],['', ' '], $package->getPrettyName())));
 	}
 
 	/**
