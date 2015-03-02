@@ -28,7 +28,7 @@ class OpenEyesInstaller extends LibraryInstaller
 			);
 		}
 
-		return 'protected/modules/' . str_replace(' ', '', ucwords(str_replace([$prefix, '-'],['', ' '], $package->getPrettyName())));
+		return 'protected/modules/' . str_replace(' ', '', ucwords(str_replace(array($prefix, '-'),array('', ' '), $package->getPrettyName())));
 	}
 
 	/**
