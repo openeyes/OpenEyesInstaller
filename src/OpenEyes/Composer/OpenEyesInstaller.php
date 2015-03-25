@@ -28,6 +28,11 @@ class OpenEyesInstaller extends LibraryInstaller
 			);
 		}
 
+		if($package->getPrettyName() === 'eyedraw')
+		{
+			return 'protected/modules/' . $package->getPrettyName();
+		}
+
 		return 'protected/modules/' . str_replace(' ', '', ucwords(str_replace(array($prefix, '-'),array('', ' '), $package->getPrettyName())));
 	}
 
